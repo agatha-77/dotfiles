@@ -1,0 +1,14 @@
+#include ".terminal_colors/gruvbox-dark.Xresources"
+
+URxvt.perl-ext-common: resize-font,fullscreen
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+*.font: xft: Inconsolata Semibold:pixelsize=14
+
+URxvt.depth: 32
+URxvt.keysym.F11: perl:fullscreen:switch
+URxvt.scrollBar: false
+URxvt.geometry: 108x40
+
+
