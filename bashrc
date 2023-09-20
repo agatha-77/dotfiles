@@ -72,7 +72,8 @@ if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
-		PS1='\[\033[01;32m\]\u@\h\[\e[01;35m\] \W\[\033[01;32m\] $\[\033[00m\] '
+	#	PS1='\[\033[01;36m\]\u@\h\[\e[01;35m\] \W\[\033[01;32m\] >\[\033[00m\] '
+		PS1='\[\033[01;32m\](\W)\[\033[01;30m\] >\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -141,7 +142,6 @@ ex ()
 # COISAS PESSOAIS DE USUARIO #
 ##############################
 
-#alias opentcc="cd ~/Documentos/trabalho_conclusao/ ; vim -p tccProposta.tex docs/*.tex docs/bibtex.bib"
 alias ll="ls -lh"
 
 
