@@ -37,6 +37,7 @@ colors() {
 case ${TERM} in
 	xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
 		PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\007"'
+		#PROMPT_COMMAND='echo -ne "\033]0;terminal\007"'
 		;;
 	screen*)
 		PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/\~}\033\\"'
@@ -72,8 +73,8 @@ if ${use_color} ; then
 	if [[ ${EUID} == 0 ]] ; then
 		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
 	else
-	#	PS1='\[\033[01;36m\]\u@\h\[\e[01;35m\] \W\[\033[01;32m\] >\[\033[00m\] '
-		PS1='\[\033[01;32m\](\W)\[\033[01;30m\] >\[\033[00m\] '
+		#PS1='\[\033[01;30m\]\# \[\033[01;36m\]\u@\h\[\e[01;34m\] \W\[\033[01;32m\] >\[\033[00m\] '
+		PS1='\[\033[01;36m\](\W) \[\033[01;32m\]>\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -94,7 +95,6 @@ unset use_color safe_term match_lhs sh
 #alias cp="cp -i"                          # confirm before overwriting something
 #alias df='df -h'                          # human-readable sizes
 #alias free='free -m'                      # show sizes in MB
-#alias np='nano -w PKGBUILD'
 #alias more=less
 
 xhost +local:root > /dev/null 2>&1

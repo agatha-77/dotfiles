@@ -1,10 +1,10 @@
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
-call plug#begin()
-    Plug 'preservim/NERDTree'
-    Plug 'junegunn/goyo.vim'
-call plug#end()
+"call plug#begin()
+"    Plug 'preservim/NERDTree'
+"    Plug 'junegunn/goyo.vim'
+"call plug#end()
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -47,7 +47,10 @@ set shiftwidth=4
 set t_Co=16
 set laststatus=2
 
-"set cursorline
-hi CursorLine cterm=NONE ctermbg=0
-hi CursorLineNr cterm=NONE ctermfg=white ctermbg=0
+set cursorline
+highlight CursorLine cterm=NONE ctermbg=0
+highlight CursorLineNr cterm=NONE ctermfg=none ctermbg=0
+highlight LineNr cterm=NONE ctermfg=8 ctermbg=none
 
+" COISAS ESPECIFICAS DE FORTRAN
+let fortran_have_tabs=1
